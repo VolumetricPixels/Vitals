@@ -1,0 +1,1 @@
+Simple plugin that provides a lot of functionality to the new Spout.
