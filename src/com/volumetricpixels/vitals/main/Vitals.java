@@ -3,14 +3,16 @@ package com.volumetricpixels.vitals.main;
 import org.spout.api.UnsafeMethod;
 import org.spout.api.plugin.CommonPlugin;
 
+import com.volumetricpixels.vitals.main.configuration.VitalsConfiguration;
+
 public class Vitals extends CommonPlugin {
-	private VitalsConfiguration config; //TODO: Make a class VitalsConfiguration in vitals.configuration
+	private VitalsConfiguration config;
 
 	@Override
 	@UnsafeMethod
 	public void onDisable() {
 		
-		getLogger().info("disabled");
+		getLogger().info("disabled.");
 		
 	}
 
@@ -20,6 +22,10 @@ public class Vitals extends CommonPlugin {
 
 		getLogger().info("v" + getDescription().getVersion() + " enabled.");
 		
+	}
+	
+	public void onLoad() {
+		config = new VitalsConfiguration(getDataFolder());
 	}
 
 }
