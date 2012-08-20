@@ -6,7 +6,7 @@ Vitals is a plugin for the Spout engine that includes many features that makes r
 ##The Team
 <table>
 	<tr>
-		<th><img src="https://en.gravatar.com/userimage/29837749/a5bf1842093967471dc0bf067f1c724d.png?size=200" alt="Denkfaehigkeit" title="DrAgonmoray"/><br/>Denkfaehigkeit</th>
+		<th><img src="https://en.gravatar.com/userimage/29837749/a5bf1842093967471dc0bf067f1c724d.png?size=55" alt="Denkfaehigkeit" title="DrAgonmoray"/><br/>Denkfaehigkeit</th>
 		<th><img src="https://dl.dropbox.com/u/35876967/fancykohlewhitebg.png" width="55" height="55" alt="Kohle" title="Kohle"/><br/>Kohle</th>
 	</tr>
 </table>
