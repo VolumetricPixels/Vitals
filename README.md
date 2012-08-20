@@ -1,4 +1,4 @@
-![Vitals](http://i.imgur.com/ExuZJ.png "Vitals")
+#Vitals
 
 ##What is Vitals?
 Vitals is a plugin for the Spout engine that includes many features that makes running a game server easier to administrate. 
