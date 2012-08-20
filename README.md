@@ -1,1 +1,7 @@
-Simple plugin that provides a lot of functionality to the new Spout.
+# Vitals
+Vitals is a plugin for the Spout platform that adds many features that are vital for running and managing a game server.
+#### The Team
+master.asp - Lead
+Kohle - Developer
+
+# A pretty README is coming soon!
