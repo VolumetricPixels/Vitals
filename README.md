@@ -1,4 +1,8 @@
 #Vitals
+<center>
+<img src="https://a248.e.akamai.net/camo.github.com/448bafbf031bb2ad38485087079748ee8555490d/687474703a2f2f7777772e6861776e75746f722e6f72672f696d6167652f7a5635706670442e706e67">
+</center>
+
 
 ##What is Vitals?
 Vitals is a plugin for the Spout engine that includes many features that makes running a game server easier to administrate. 
