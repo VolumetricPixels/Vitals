@@ -23,7 +23,7 @@ public class Vitals extends CommonPlugin {
 
 		getLogger().info("v" + getDescription().getVersion() + " enabled.");
 		
-		//TODO: Register the commands and use Commands.java as the executer
+		//TODO: Register the commands from AdminCommands and GeneralCommands.
 		
 	}
 	

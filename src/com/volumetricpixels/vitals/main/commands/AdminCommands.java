@@ -3,6 +3,7 @@ package com.volumetricpixels.vitals.main.commands;
 import java.util.List;
 
 import org.spout.api.chat.ChatSection;
+import org.spout.api.chat.style.ChatStyle;
 import org.spout.api.command.Command;
 import org.spout.api.command.CommandContext;
 import org.spout.api.command.CommandExecutor;
@@ -10,8 +11,8 @@ import org.spout.api.command.CommandSource;
 import org.spout.api.entity.Entity;
 import org.spout.api.exception.CommandException;
 import org.spout.api.geo.World;
+import org.spout.vanilla.data.Weather;
 import org.spout.vanilla.entity.VanillaController;
-import org.spout.vanilla.entity.VanillaPlayerController;
 import org.spout.vanilla.entity.world.VanillaSky;
 
 public class AdminCommands implements CommandExecutor {
@@ -36,8 +37,29 @@ public class AdminCommands implements CommandExecutor {
 		List<ChatSection> csl = context.getRawArgs();
 		
 		//If the command is the weather command
-		//TODO: Finish setting up the weather command.
-		//sky.setWeather(Weather.typeHere); - sets the weather.
+		if(name.equals("weather")) {
+			if(csl.size() > 1) {
+				source.sendMessage(ChatStyle.GRAY, "Usage: /weather <sunny/rainy/storm/check>");
+			} else if(csl.size() == 1) {
+				if(csl.get(0).equals("sunny") && source.hasPermission("vitals.weather.set")) {
+					sky.setWeather(Weather.CLEAR);
+					source.sendMessage(ChatStyle.GRAY, "Weather set to sunny!");
+				} else if(csl.get(0).equals("rainy") && source.hasPermission("vitals.weather.set")) {
+					sky.setWeather(Weather.RAIN);
+					source.sendMessage(ChatStyle.GRAY, "Weather set to rainy!");
+				} else if(csl.get(0).equals("storm") && source.hasPermission("vitals.weather.set")) {
+					sky.setWeather(Weather.THUNDERSTORM);
+					source.sendMessage(ChatStyle.GRAY, "Weather set to storm!");
+				} else if(csl.get(0).equals("check") && source.hasPermission("vitals.weather.check")) {
+					Weather weather = sky.getWeather();
+					source.sendMessage(ChatStyle.GRAY, "The current weather is " + weather + ".");
+				} else {
+					source.sendMessage(ChatStyle.GRAY, "Incorrect syntax! Usage: /weather <sunny/rainy/storm/check>");
+				}			
+			}
+		} else if(name.equals("time")) {
+			//TODO: Finish the time command.
+		}
 		
 	}
 	
