@@ -58,7 +58,15 @@ public class AdminCommands implements CommandExecutor {
 				}			
 			}
 		} else if(name.equals("time")) {
-			//TODO: Finish the time command.
+			if(csl.size() > 1) {
+				source.sendMessage(ChatStyle.GRAY, "Usage: /time <day/night/dawn/dusk/check>");
+			} else if(csl.size() == 1) {
+				if(csl.get(0).equals("day") && source.hasPermission("vitals.time.change")) {
+					sky.setTime(8000);
+				} else if(csl.get(0).equals("night")) {
+					sky.setTime(16000);
+				}
+			}
 		}
 		
 	}
