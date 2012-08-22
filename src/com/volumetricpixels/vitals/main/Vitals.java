@@ -6,6 +6,7 @@ import org.spout.api.plugin.CommonPlugin;
 import com.volumetricpixels.vitals.main.configuration.VitalsConfiguration;
 
 public class Vitals extends CommonPlugin {
+	@SuppressWarnings("unused")
 	private VitalsConfiguration config;
 
 	@Override
