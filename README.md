@@ -1,13 +1,13 @@
 #Vitals
 <center>
-<img src="https://a248.e.akamai.net/camo.github.com/448bafbf031bb2ad38485087079748ee8555490d/687474703a2f2f7777772e6861776e75746f722e6f72672f696d6167652f7a5635706670442e706e67">
+<img src="https://dl.dropbox.com/u/35876967/VolumetricPixels/logo.png">
 </center>
 
 
-##What is Vitals?
+##<img src="https://dl.dropbox.com/u/35876967/VolumetricPixels/smallsquare.png">What is Vitals?
 Vitals is a plugin for the Spout engine that includes many features that makes running a game server easier to administrate. 
 
-##The Team
+##<img src="https://dl.dropbox.com/u/35876967/VolumetricPixels/smallsquare.png">The Team
 <table>
 	<tr>
 		<th><img src="https://en.gravatar.com/userimage/29837749/a5bf1842093967471dc0bf067f1c724d.png?size=55" alt="Denkfaehigkeit" title="DrAgonmoray"/><br/>Denkfaehigkeit</th>
@@ -15,7 +15,7 @@ Vitals is a plugin for the Spout engine that includes many features that makes r
 	</tr>
 </table>
 
-##Pull Request Guidelines / Code Conventions:
+##<img src="https://dl.dropbox.com/u/35876967/VolumetricPixels/smallsquare.png">Pull Request Guidelines / Code Conventions:
 
 ###Code Style:
 
