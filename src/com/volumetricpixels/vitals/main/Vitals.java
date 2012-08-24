@@ -10,33 +10,28 @@ import com.volumetricpixels.vitals.main.commands.GeneralCommands;
 import com.volumetricpixels.vitals.main.configuration.VitalsConfiguration;
 
 public class Vitals extends CommonPlugin {
-	@SuppressWarnings("unused")
+
 	private VitalsConfiguration config;
 
-	private final AnnotatedCommandRegistrationFactory commandRegistration =
-            new AnnotatedCommandRegistrationFactory(new SimpleInjector(this));
-	
 	@Override
-	@UnsafeMethod
 	public void onDisable() {
-		
 		getLogger().info("disabled.");
-		
 	}
 
 	@Override
-	@UnsafeMethod
 	public void onEnable() {
+		config = new VitalsConfiguration(getDataFolder());
 
-		getLogger().info("v" + getDescription().getVersion() + " enabled.");
-		
 		// Register commands.
+		AnnotatedCommandRegistrationFactory commandRegistration =
+				new AnnotatedCommandRegistrationFactory(new SimpleInjector(this));
 		getEngine().getRootCommand().addSubCommands(this, AdminCommands.class, commandRegistration);
 		getEngine().getRootCommand().addSubCommands(this, GeneralCommands.class, commandRegistration);
-	}
-	
-	public void onLoad() {
-		config = new VitalsConfiguration(getDataFolder());
+
+		getLogger().info("v" + getDescription().getVersion() + " enabled.");
 	}
 
+	public VitalsConfiguration getConfig() {
+		return config;
+	}
 }
