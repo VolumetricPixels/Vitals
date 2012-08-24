@@ -5,3 +5,5 @@ author: Kohle
 authors: [Kohle, Denkfaehigkeit]
 website: http://github.com/VolumetricPixels/Vitals
 main: com.volumetricpixels.vitals.main.Vitals
+
+depends: [Vanilla]
