@@ -19,7 +19,7 @@ public class AdminCommands {
 
 	@Command(aliases = {"weather"}, usage = "<sunny/rainy/storm/check>", desc = "Change or check the weather.", min = 1, max = 1)
 	@CommandPermissions("vitals.weather")
-	public void tp(CommandContext args, CommandSource source) throws CommandException {
+	public void weather(CommandContext args, CommandSource source) throws CommandException {
 		if(source instanceof VanillaController) {
 			//Setting the player
 			Entity player = ((VanillaController) source).getParent();
