@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.spout.api.chat.ChatSection;
 import org.spout.api.chat.style.ChatStyle;
-import org.spout.api.command.Command;
 import org.spout.api.command.CommandContext;
-import org.spout.api.command.CommandExecutor;
 import org.spout.api.command.CommandSource;
+import org.spout.api.command.annotated.Command;
+import org.spout.api.command.annotated.CommandPermissions;
 import org.spout.api.entity.Entity;
 import org.spout.api.exception.CommandException;
 import org.spout.api.geo.World;
@@ -15,29 +15,25 @@ import org.spout.vanilla.data.Weather;
 import org.spout.vanilla.entity.VanillaController;
 import org.spout.vanilla.entity.world.VanillaSky;
 
-public class AdminCommands implements CommandExecutor {
+public class AdminCommands {
 
-	@Override
-	public void processCommand(CommandSource source, Command cmd, CommandContext context) throws CommandException {
-		
-		//Setting the Vanilla player.
-		VanillaController vplayer = (VanillaController) source;
-		Entity player = vplayer.getParent();
-		
-		//Setting the world
-		World world = player.getWorld();
-		
-		//Getting the VanillaSky
-		VanillaSky sky = VanillaSky.getSky(world);
-		
-		//Setting the varible for a command.
-		String name = cmd.getPreferredName().toLowerCase();
-		
-		//Get all the args from a command
-		List<ChatSection> csl = context.getRawArgs();
-		
-		//If the command is the weather command
-		if(name.equals("weather")) {
+	@Command(aliases = {"weather"}, usage = "<sunny/rainy/storm/check>", desc = "Change or check the weather.", min = 1, max = 1)
+	@CommandPermissions("vitals.weather")
+	public void tp(CommandContext args, CommandSource source) throws CommandException {
+		if(source instanceof VanillaController) {
+			//Setting the player
+			Entity player = ((VanillaController) source).getParent();
+			
+			//Setting the world
+			World world = player.getWorld();
+			
+			//Getting the VanillaSky
+			VanillaSky sky = VanillaSky.getSky(world);
+			
+			//Get all the args from a command
+			List<ChatSection> csl = args.getRawArgs();
+			
+			//Checking all the stuff.
 			if(csl.size() > 1) {
 				source.sendMessage(ChatStyle.GRAY, "Usage: /weather <sunny/rainy/storm/check>");
 			} else if(csl.size() == 1) {
@@ -57,18 +53,6 @@ public class AdminCommands implements CommandExecutor {
 					source.sendMessage(ChatStyle.GRAY, "Incorrect syntax! Usage: /weather <sunny/rainy/storm/check>");
 				}			
 			}
-		} else if(name.equals("time")) {
-			if(csl.size() > 1) {
-				source.sendMessage(ChatStyle.GRAY, "Usage: /time <day/night/dawn/dusk/check>");
-			} else if(csl.size() == 1) {
-				if(csl.get(0).equals("day") && source.hasPermission("vitals.time.change")) {
-					sky.setTime(8000);
-				} else if(csl.get(0).equals("night")) {
-					sky.setTime(16000);
-				}
-			}
 		}
-		
 	}
-	
 }
