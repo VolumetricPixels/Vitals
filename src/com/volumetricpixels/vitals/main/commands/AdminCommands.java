@@ -8,24 +8,23 @@ import org.spout.api.command.CommandContext;
 import org.spout.api.command.CommandSource;
 import org.spout.api.command.annotated.Command;
 import org.spout.api.command.annotated.CommandPermissions;
-import org.spout.api.entity.Entity;
+import org.spout.api.entity.component.controller.BasicController;
 import org.spout.api.exception.CommandException;
 import org.spout.api.geo.World;
 import org.spout.vanilla.data.Weather;
-import org.spout.vanilla.entity.VanillaController;
 import org.spout.vanilla.entity.world.VanillaSky;
 
 public class AdminCommands {
 
 	@Command(aliases = {"weather"}, usage = "<sunny/rainy/storm/check>", desc = "Change or check the weather.", min = 1, max = 1)
 	@CommandPermissions("vitals.weather")
-	public void tp(CommandContext args, CommandSource source) throws CommandException {
-		if(source instanceof VanillaController) {
-			//Setting the player
-			Entity player = ((VanillaController) source).getParent();
+	public void weather(CommandContext args, CommandSource source) throws CommandException {
+		if(source instanceof BasicController) {
+			//Setting the entity
+			BasicController player = (BasicController) source;
 			
 			//Setting the world
-			World world = player.getWorld();
+			World world = player.getParent().getWorld();
 			
 			//Getting the VanillaSky
 			VanillaSky sky = VanillaSky.getSky(world);
@@ -34,9 +33,9 @@ public class AdminCommands {
 			List<ChatSection> csl = args.getRawArgs();
 			
 			//Checking all the stuff.
-			if(csl.size() > 1) {
+			if(csl.size() != 1) {
 				source.sendMessage(ChatStyle.GRAY, "Usage: /weather <sunny/rainy/storm/check>");
-			} else if(csl.size() == 1) {
+			} else {
 				if(csl.get(0).equals("sunny") && source.hasPermission("vitals.weather.set")) {
 					sky.setWeather(Weather.CLEAR);
 					source.sendMessage(ChatStyle.GRAY, "Weather set to sunny!");
@@ -51,7 +50,7 @@ public class AdminCommands {
 					source.sendMessage(ChatStyle.GRAY, "The current weather is " + weather + ".");
 				} else {
 					source.sendMessage(ChatStyle.GRAY, "Incorrect syntax! Usage: /weather <sunny/rainy/storm/check>");
-				}			
+				}	
 			}
 		}
 	}
