@@ -1,6 +1,7 @@
 name: Vitals
 version: 1.0.0
 description: Adds vital commands and features to run a Vanilla server.
-authors: [Denkfaehigkeit, Kohle]
+author: Kohle
+authors: [Kohle, Denkfaehigkeit]
 website: http://github.com/VolumetricPixels/Vitals
 main: com.volumetricpixels.vitals.main.Vitals
