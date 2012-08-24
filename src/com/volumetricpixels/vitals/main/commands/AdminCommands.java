@@ -8,10 +8,10 @@ import org.spout.api.command.CommandContext;
 import org.spout.api.command.CommandSource;
 import org.spout.api.command.annotated.Command;
 import org.spout.api.command.annotated.CommandPermissions;
-import org.spout.api.entity.component.controller.BasicController;
 import org.spout.api.exception.CommandException;
 import org.spout.api.geo.World;
 import org.spout.vanilla.data.Weather;
+import org.spout.vanilla.entity.VanillaController;
 import org.spout.vanilla.entity.world.VanillaSky;
 
 public class AdminCommands {
@@ -19,9 +19,9 @@ public class AdminCommands {
 	@Command(aliases = {"weather"}, usage = "<sunny/rainy/storm/check>", desc = "Change or check the weather.", min = 1, max = 1)
 	@CommandPermissions("vitals.weather")
 	public void weather(CommandContext args, CommandSource source) throws CommandException {
-		if(source instanceof BasicController) {
+		if(source instanceof VanillaController) {
 			//Setting the entity
-			BasicController player = (BasicController) source;
+			VanillaController player = (VanillaController) source;
 			
 			//Setting the world
 			World world = player.getParent().getWorld();
