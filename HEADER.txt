@@ -1,0 +1,9 @@
+This file is part of Vitals.
+
+(c)2012 VolumetricPixels
+Vitals is licensed under the VolumetricPixels License v1
+
+You should have received a copy of the GNU Affero General Public License,
+the MIT license and the VolumetricPixels License v1 along with this program.
+If not, see <http://github.com/VolumetricPixels/Vitals/blob/master/License.txt>
+ for the full license.
