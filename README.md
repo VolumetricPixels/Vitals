@@ -1,6 +1,6 @@
 #Vitals
 <center>
-<img src="https://dl.dropbox.com/u/35876967/VolumetricPixels/logo.png">
+<img src="https://dl.dropbox.com/u/35876967/VolumetricPixels/vitalslogo.png">
 </center>
 
 
