@@ -29,7 +29,7 @@ public class AdminCommands {
 			// Get the weather
 			String wName = args.getString(0, Weather.CLEAR.name());
 			Weather w = Weather.valueOf(wName.toUpperCase());
-			if (w == null) {
+			if(w == null) {
 				source.sendMessage(ChatStyle.GRAY, "Unknown weather type '" + wName + "'. Available weather types: " + ChatStyle.RED, Joiner.on(' ').join(Weather.values()));
 				return;
 			}
