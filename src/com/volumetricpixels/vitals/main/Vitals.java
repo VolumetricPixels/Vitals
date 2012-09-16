@@ -6,6 +6,8 @@ import org.spout.api.plugin.CommonPlugin;
 
 import com.volumetricpixels.vitals.main.commands.AdminCommands;
 import com.volumetricpixels.vitals.main.commands.GeneralCommands;
+import com.volumetricpixels.vitals.main.commands.ProtectionCommands;
+import com.volumetricpixels.vitals.main.commands.WorldCommands;
 import com.volumetricpixels.vitals.main.configuration.VitalsConfiguration;
 
 public class Vitals extends CommonPlugin {
@@ -25,6 +27,8 @@ public class Vitals extends CommonPlugin {
                 AnnotatedCommandRegistrationFactory commandRegistration = new AnnotatedCommandRegistrationFactory(new SimpleInjector(this));
                 getEngine().getRootCommand().addSubCommands(this, AdminCommands.class, commandRegistration);
                 getEngine().getRootCommand().addSubCommands(this, GeneralCommands.class, commandRegistration);
+                getEngine().getRootCommand().addSubCommands(this, ProtectionCommands.class, commandRegistration);
+                getEngine().getRootCommand().addSubCommands(this, WorldCommands.class, commandRegistration);
 
                 getLogger().info("[Vitals] v" + getDescription().getVersion() + " enabled!");
         }
