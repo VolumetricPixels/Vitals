@@ -1,9 +1,13 @@
 name: Vitals
 version: 1.0.0
-description: Adds vital commands and features to run a Vanilla server.
+
+description: >
+            Adds vital commands and features to run a Spout game server.
+            
 author: Kohle
 authors: [Kohle, Denkfaehigkeit]
 website: http://github.com/VolumetricPixels/Vitals
-main: com.volumetricpixels.vitals.main.Vitals
 
+main: com.volumetricpixels.vitals.main.Vitals
+platform: SERVER
 depends: [Vanilla]
