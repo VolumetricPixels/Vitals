@@ -23,7 +23,7 @@ public class AdminCommands {
     @Command(aliases = { "weather" }, usage = "<weather type>", desc = "Change the weather.", min = 1, max = 1)
     @CommandPermissions("vitals.weather")
     public void weather(CommandContext args, CommandSource source) throws CommandException {
-        if (source instanceof Player) {
+        if(source instanceof Player) {
             // Getting the sky
             VanillaSky sky = VanillaSky.getSky(((Player) source).getWorld());
 
@@ -31,7 +31,7 @@ public class AdminCommands {
             String wName = args.getString(0);
             Weather w = Weather.valueOf(wName.toUpperCase());
 
-            if (w == null) {
+            if(w == null) {
                 source.sendMessage(ChatStyle.GRAY, "Unknown weather type '" + wName + "'. Available weather types: " + ChatStyle.RED, Joiner.on(' ')
                         .join(Weather.values()));
                 return;
