@@ -25,15 +25,15 @@ public class VitalsPlugin extends CommonPlugin {
         getEngine().getRootCommand().addSubCommands(this, AdminCommands.class, commandRegistration);
         getEngine().getRootCommand().addSubCommands(this, GeneralCommands.class, commandRegistration);
 
-        if(VitalsConfiguration.ENABLE_PROTECTIONS.getBoolean(false)) {
+        if (VitalsConfiguration.ENABLE_PROTECTIONS.getBoolean(false)) {
             getEngine().getRootCommand().addSubCommands(this, ProtectionCommands.class, commandRegistration);
         }
 
-        if(VitalsConfiguration.ENABLE_WORLD_MANAGEMENT.getBoolean(false)) {
+        if (VitalsConfiguration.ENABLE_WORLD_MANAGEMENT.getBoolean(false)) {
             getEngine().getRootCommand().addSubCommands(this, WorldCommands.class, commandRegistration);
         }
 
-        if(VitalsConfiguration.ENABLE_FUN_COMMANDS.getBoolean(true)) {
+        if (VitalsConfiguration.ENABLE_FUN_COMMANDS.getBoolean(true)) {
             getEngine().getRootCommand().addSubCommands(this, FunCommands.class, commandRegistration);
         }
 
