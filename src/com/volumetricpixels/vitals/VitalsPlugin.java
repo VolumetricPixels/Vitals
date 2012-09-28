@@ -5,6 +5,7 @@ import org.spout.api.command.annotated.SimpleInjector;
 import org.spout.api.plugin.CommonPlugin;
 
 import com.volumetricpixels.vitals.commands.AdminCommands;
+import com.volumetricpixels.vitals.commands.ChatCommands;
 import com.volumetricpixels.vitals.commands.FunCommands;
 import com.volumetricpixels.vitals.commands.GeneralCommands;
 import com.volumetricpixels.vitals.commands.ProtectionCommands;
@@ -35,6 +36,10 @@ public class VitalsPlugin extends CommonPlugin {
 
         if (VitalsConfiguration.ENABLE_FUN_COMMANDS.getBoolean(true)) {
             getEngine().getRootCommand().addSubCommands(this, FunCommands.class, commandRegistration);
+        }
+        
+        if (VitalsConfiguration.ENABLE_CHAT_COMMANDS.getBoolean(true)) {
+        	getEngine().getRootCommand().addSubCommands(this, ChatCommands.class, commandRegistration);
         }
 
         getLogger().info("[Vitals] v" + getDescription().getVersion() + " enabled!");

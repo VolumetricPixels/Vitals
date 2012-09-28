@@ -9,19 +9,19 @@ import org.spout.api.exception.CommandException;
 public class FunCommands {
 
     @Command(aliases = { "slap" }, usage = "<target>", desc = "Slap a person!", min = 1, max = 1)
-    @CommandPermissions("vitals.slap")
+    @CommandPermissions("vitals.fun.slap")
     public void slap(CommandContext args, CommandSource source) throws CommandException {
         // TODO: Finish slap command
     }
 
     @Command(aliases = { "rocket" }, usage = "<target>", desc = "Rocket a person!", min = 1, max = 1)
-    @CommandPermissions("vitals.rocket")
+    @CommandPermissions("vitals.fun.rocket")
     public void rocket(CommandContext args, CommandSource source) throws CommandException {
         // TODO: Finish command
     }
 
     @Command(aliases = { "barrage" }, usage = "<target>", desc = "Rain down arrows on someone!", min = 1, max = 1)
-    @CommandPermissions("vitals.barrage")
+    @CommandPermissions("vitals.fun.barrage")
     public void barrage(CommandContext args, CommandSource source) throws CommandException {
         // TODO: Finish command
     }

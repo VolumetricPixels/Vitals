@@ -21,7 +21,7 @@ import org.spout.vanilla.entity.world.VanillaSky;
 public class AdminCommands {
 
     @Command(aliases = { "weather" }, usage = "<weather type>", desc = "Change the weather.", min = 1, max = 1)
-    @CommandPermissions("vitals.weather")
+    @CommandPermissions("vitals.admin.weather")
     public void weather(CommandContext args, CommandSource source) throws CommandException {
         if (source instanceof Player) {
             // Getting the sky
@@ -43,7 +43,7 @@ public class AdminCommands {
     }
 
     @Command(aliases = { "time" }, usage = "<time>", desc = "Change the time.", min = 1, max = 1)
-    @CommandPermissions("vitals.time")
+    @CommandPermissions("vitals.admin.time")
     public void time(CommandContext args, CommandSource source) throws CommandException {
         // TODO: Finish the time command.
     }
