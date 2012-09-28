@@ -37,7 +37,7 @@ public class VitalsPlugin extends CommonPlugin {
         if (VitalsConfiguration.ENABLE_FUN_COMMANDS.getBoolean(true)) {
             getEngine().getRootCommand().addSubCommands(this, FunCommands.class, commandRegistration);
         }
-        
+
         if (VitalsConfiguration.ENABLE_CHAT_COMMANDS.getBoolean(true)) {
         	getEngine().getRootCommand().addSubCommands(this, ChatCommands.class, commandRegistration);
         }
