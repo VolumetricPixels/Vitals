@@ -12,6 +12,8 @@ public class VitalsConfiguration extends ConfigurationHolderConfiguration {
     public static final ConfigurationHolder ENABLE_PROTECTIONS = new ConfigurationHolder(false, "Enable", "Protections");
     public static final ConfigurationHolder ENABLE_WORLD_MANAGEMENT = new ConfigurationHolder(false, "Enable", "WorldManagement");
     public static final ConfigurationHolder ENABLE_CHAT_COMMANDS = new ConfigurationHolder(true, "Enable", "Commands", "Chat");
+    public static final ConfigurationHolder ENABLE_ADMIN_COMMANDS = new ConfigurationHolder(true, "Enable", "Commands", "Admin");
+    public static final ConfigurationHolder ENABLE_GENERAL_COMMANDS = new ConfigurationHolder(true, "Enable", "Commands", "General");
 
     public VitalsConfiguration(File dataFolder) {
         super(new YamlConfiguration(new File(dataFolder, "config.yml")));

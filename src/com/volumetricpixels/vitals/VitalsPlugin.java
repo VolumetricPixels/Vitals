@@ -22,15 +22,12 @@ public class VitalsPlugin extends CommonPlugin {
 
         // Register commands.
         AnnotatedCommandRegistrationFactory commandRegistration = new AnnotatedCommandRegistrationFactory(new SimpleInjector(this));
-        
-        getEngine().getRootCommand().addSubCommands(this, AdminCommands.class, commandRegistration);
-        getEngine().getRootCommand().addSubCommands(this, GeneralCommands.class, commandRegistration);
 
-        if (VitalsConfiguration.ENABLE_PROTECTIONS.getBoolean(false)) {
+        if (VitalsConfiguration.ENABLE_PROTECTIONS.getBoolean(true)) {
             getEngine().getRootCommand().addSubCommands(this, ProtectionCommands.class, commandRegistration);
         }
 
-        if (VitalsConfiguration.ENABLE_WORLD_MANAGEMENT.getBoolean(false)) {
+        if (VitalsConfiguration.ENABLE_WORLD_MANAGEMENT.getBoolean(true)) {
             getEngine().getRootCommand().addSubCommands(this, WorldCommands.class, commandRegistration);
         }
 
@@ -41,12 +38,22 @@ public class VitalsPlugin extends CommonPlugin {
         if (VitalsConfiguration.ENABLE_CHAT_COMMANDS.getBoolean(true)) {
         	getEngine().getRootCommand().addSubCommands(this, ChatCommands.class, commandRegistration);
         }
+        
+        if (VitalsConfiguration.ENABLE_ADMIN_COMMANDS.getBoolean(true)) {
+        	getEngine().getRootCommand().addSubCommands(this, AdminCommands.class, commandRegistration);
+        }
+        
+        if (VitalsConfiguration.ENABLE_GENERAL_COMMANDS.getBoolean(true)) {
+        	getEngine().getRootCommand().addSubCommands(this, GeneralCommands.class, commandRegistration);
+        }
 
+        //Log the plugin enabling
         getLogger().info("[Vitals] v" + getDescription().getVersion() + " enabled!");
     }
 
     @Override
     public void onDisable() {
+    	//Log the plugin disabling
         getLogger().info("[Vitals] v" + getDescription().getVersion() + " disabled!");
     }
 
