@@ -2,6 +2,7 @@ package com.volumetricpixels.vitals;
 
 import org.spout.api.command.annotated.AnnotatedCommandRegistrationFactory;
 import org.spout.api.command.annotated.SimpleInjector;
+import org.spout.api.exception.ConfigurationException;
 import org.spout.api.plugin.CommonPlugin;
 
 import com.volumetricpixels.vitals.commands.AdminCommands;
@@ -19,8 +20,15 @@ public class VitalsPlugin extends CommonPlugin {
     @Override
     public void onEnable() {
         config = new VitalsConfiguration(getDataFolder());
+        config.setWritesDefaults(true);
 
-        // Register commands.
+        try {
+            config.load();
+        } catch (ConfigurationException ex) {
+            ex.printStackTrace();
+        }
+
+        //Register commands
         AnnotatedCommandRegistrationFactory commandRegistration = new AnnotatedCommandRegistrationFactory(new SimpleInjector(this));
 
         if (VitalsConfiguration.ENABLE_PROTECTIONS.getBoolean(true)) {
@@ -38,11 +46,11 @@ public class VitalsPlugin extends CommonPlugin {
         if (VitalsConfiguration.ENABLE_CHAT_COMMANDS.getBoolean(true)) {
         	getEngine().getRootCommand().addSubCommands(this, ChatCommands.class, commandRegistration);
         }
-        
+
         if (VitalsConfiguration.ENABLE_ADMIN_COMMANDS.getBoolean(true)) {
         	getEngine().getRootCommand().addSubCommands(this, AdminCommands.class, commandRegistration);
         }
-        
+
         if (VitalsConfiguration.ENABLE_GENERAL_COMMANDS.getBoolean(true)) {
         	getEngine().getRootCommand().addSubCommands(this, GeneralCommands.class, commandRegistration);
         }
@@ -53,8 +61,14 @@ public class VitalsPlugin extends CommonPlugin {
 
     @Override
     public void onDisable() {
-    	//Log the plugin disabling
+        //Log the plugin disabling
         getLogger().info("[Vitals] v" + getDescription().getVersion() + " disabled!");
+
+        try {
+            config.save();
+        } catch (ConfigurationException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public VitalsConfiguration getConfig() {
