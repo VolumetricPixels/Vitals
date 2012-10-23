@@ -9,10 +9,12 @@ import org.spout.api.command.CommandContext;
 import org.spout.api.command.CommandSource;
 import org.spout.api.command.annotated.Command;
 import org.spout.api.command.annotated.CommandPermissions;
+import org.spout.api.entity.Controller;
 import org.spout.api.entity.Player;
 import org.spout.api.exception.CommandException;
 
 import org.spout.vanilla.data.Weather;
+import org.spout.vanilla.entity.VanillaController;
 import org.spout.vanilla.entity.world.VanillaSky;
 
 /**
@@ -46,6 +48,12 @@ public class AdminCommands {
     @CommandPermissions("vitals.admin.time")
     public void time(CommandContext args, CommandSource source) throws CommandException {
         // TODO: Finish the time command.
+    }
+    
+    @Command(aliases = { "more" }, desc = "Set the item stack you are holding to 64.", min = 0, max = 0)
+    @CommandPermissions("vitals.admin.more")
+    public void more(CommandContext args, CommandSource source) throws CommandException {
+    	//TODO: Get the player, get inventory, and set stack size to 64
     }
 
 }

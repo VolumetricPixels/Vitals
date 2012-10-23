@@ -14,6 +14,7 @@ public class VitalsConfiguration extends ConfigurationHolderConfiguration {
     public static final ConfigurationHolder ENABLE_CHAT_COMMANDS = new ConfigurationHolder(true, "Enable", "Commands", "Chat");
     public static final ConfigurationHolder ENABLE_ADMIN_COMMANDS = new ConfigurationHolder(true, "Enable", "Commands", "Admin");
     public static final ConfigurationHolder ENABLE_GENERAL_COMMANDS = new ConfigurationHolder(true, "Enable", "Commands", "General");
+    public static final ConfigurationHolder ENABLE_VOLUMETRICBANS_HOOK = new ConfigurationHolder(true, "Enable", "Hooks", "VolumetricBans");
 
     public VitalsConfiguration(File dataFolder) {
         super(new YamlConfiguration(new File(dataFolder, "config.yml")));

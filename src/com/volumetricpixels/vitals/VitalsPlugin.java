@@ -54,6 +54,10 @@ public class VitalsPlugin extends CommonPlugin {
         if (VitalsConfiguration.ENABLE_GENERAL_COMMANDS.getBoolean(true)) {
         	getEngine().getRootCommand().addSubCommands(this, GeneralCommands.class, commandRegistration);
         }
+        
+        if (VitalsConfiguration.ENABLE_VOLUMETRICBANS_HOOK.getBoolean(true)) { //For future spam detection
+        	//TODO: Hook into VolumetricBans
+        }
 
         //Log the plugin enabling
         getLogger().info("[Vitals] v" + getDescription().getVersion() + " enabled!");
