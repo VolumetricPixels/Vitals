@@ -11,7 +11,7 @@ public class ChatCommands {
 	//TODO: Add chat commands (mute, PM, etc.)
 	
 	@Command(aliases = { "mute" }, usage = "<target>", desc = "Mute a person from chatting.", min = 1, max = 1)
-    @CommandPermissions("vitals.chat.mute")
+    @CommandPermissions("vitals.command.chat.mute")
     public void mute(CommandContext args, CommandSource source) throws CommandException {
         // TODO: Finish mute command
     }

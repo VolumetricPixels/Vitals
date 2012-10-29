@@ -23,7 +23,7 @@ import org.spout.vanilla.entity.world.VanillaSky;
 public class AdminCommands {
 
     @Command(aliases = { "weather" }, usage = "<weather type>", desc = "Change the weather.", min = 1, max = 1)
-    @CommandPermissions("vitals.admin.weather")
+    @CommandPermissions("vitals.command.weather")
     public void weather(CommandContext args, CommandSource source) throws CommandException {
         if (source instanceof Player) {
             // Getting the sky
@@ -45,15 +45,39 @@ public class AdminCommands {
     }
 
     @Command(aliases = { "time" }, usage = "<time>", desc = "Change the time.", min = 1, max = 1)
-    @CommandPermissions("vitals.admin.time")
+    @CommandPermissions("vitals.command.time")
     public void time(CommandContext args, CommandSource source) throws CommandException {
         // TODO: Finish the time command.
     }
     
     @Command(aliases = { "more" }, desc = "Set the item stack you are holding to 64.", min = 0, max = 0)
-    @CommandPermissions("vitals.admin.more")
+    @CommandPermissions("vitals.command.more")
     public void more(CommandContext args, CommandSource source) throws CommandException {
     	//TODO: Get the player, get inventory, and set stack size to 64
+    }
+    
+    @Command(aliases = { "give", "i", "item" }, desc = "Give you or a player an item.", min = 1, max = 3)
+    @CommandPermissions("vitals.command.give")
+    public void give(CommandContext args, CommandSource source) throws CommandException {
+    	//TODO: Finish give command
+    }
+    
+    @Command(aliases = { "setspawn" }, desc = "Set the world spawn", min = 0, max = 0)
+    @CommandPermissions("vitals.command.spawn.set")
+    public void setspawn(CommandContext args, CommandSource source) throws CommandException {
+    	//TODO: Set the spawn
+    }
+    
+    @Command(aliases = { "spawn" }, desc = "Teleport yourself or another to the world spawn.", min = 0, max = 2)
+    @CommandPermissions("vitals.command.spawn")
+    public void spawn(CommandContext args, CommandSource source) throws CommandException {
+    	//TODO: Go to spawn
+    }
+    
+    @Command(aliases = { "spawnmob" }, desc = "Spawn a mob.", min = 0, max = 2)
+    @CommandPermissions("vitals.command.spawnmob")
+    public void spawnmob(CommandContext args, CommandSource source) throws CommandException {
+    	//TODO: View the rules
     }
 
 }
