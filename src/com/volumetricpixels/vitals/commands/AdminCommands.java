@@ -1,3 +1,19 @@
+/* 
+ * This file is part of ${project_name}.
+ * 
+ * Copyright (c) 2012-2012, VolumetricPixels <http://volumetricpixels.com/>
+ * ${project_name} is licensed under the AGPLv3 License with a classpath exception and an additional provision that after 180 days, 
+ * the license becomes MIT.
+ * 
+ * The VolumetricPixels License is a triple license combined out of the AGPL v3
+ * License, the MIT License and the Classpath Exception License. 
+ * 
+ * You should have received a copy of the GNU Affero General Public License,
+ * the MIT license and the VolumetricPixels License v1 along with this program.
+ * If not, see <http://github.com/VolumetricPixels/Vitals/blob/master/License.txt>
+ * for the full license.
+*/
+
 package com.volumetricpixels.vitals.commands;
 
 import com.google.common.base.Joiner;
@@ -9,12 +25,10 @@ import org.spout.api.command.CommandContext;
 import org.spout.api.command.CommandSource;
 import org.spout.api.command.annotated.Command;
 import org.spout.api.command.annotated.CommandPermissions;
-import org.spout.api.entity.Controller;
 import org.spout.api.entity.Player;
 import org.spout.api.exception.CommandException;
 
 import org.spout.vanilla.data.Weather;
-import org.spout.vanilla.entity.VanillaController;
 import org.spout.vanilla.entity.world.VanillaSky;
 
 /**
@@ -34,7 +48,7 @@ public class AdminCommands {
             Weather w = Weather.valueOf(wName.toUpperCase());
 
             if (w == null) {
-                source.sendMessage(ChatStyle.GRAY, "Unknown weather type '" + wName + "'. Available weather types: " + ChatStyle.RED, Joiner.on(' ')
+                source.sendMessage(ChatStyle.GRAY, "Unknown weather type '" + ChatStyle.RED + wName + ChatStyle.GRAY + "'. Available weather types: " + ChatStyle.RED, Joiner.on(' ')
                         .join(Weather.values()));
                 return;
             }
@@ -47,7 +61,7 @@ public class AdminCommands {
     @Command(aliases = { "time" }, usage = "<time>", desc = "Change the time.", min = 1, max = 1)
     @CommandPermissions("vitals.command.time")
     public void time(CommandContext args, CommandSource source) throws CommandException {
-        // TODO: Finish the time command.
+    	//TODO: Finish time command
     }
     
     @Command(aliases = { "more" }, desc = "Set the item stack you are holding to 64.", min = 0, max = 0)

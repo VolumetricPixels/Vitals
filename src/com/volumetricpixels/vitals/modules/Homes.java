@@ -14,10 +14,10 @@
  * for the full license.
 */
 
-package com.volumetricpixels.vitals.listeners;
+package com.volumetricpixels.vitals.modules;
 
-public class SpamDetector {
+public class Homes {
 	
-	//TODO: Use this class for the chat spam detector
-
+	//TODO: Finish home addon
+	
 }
