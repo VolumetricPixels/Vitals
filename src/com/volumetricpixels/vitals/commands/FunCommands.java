@@ -1,8 +1,8 @@
 /* 
- * This file is part of ${project_name}.
+ * This file is part of Vitals.
  * 
  * Copyright (c) 2012-2012, VolumetricPixels <http://volumetricpixels.com/>
- * ${project_name} is licensed under the AGPLv3 License with a classpath exception and an additional provision that after 180 days, 
+ * Vitals is licensed under the AGPLv3 License with a classpath exception and an additional provision that after 180 days, 
  * the license becomes MIT.
  * 
  * The VolumetricPixels License is a triple license combined out of the AGPL v3
